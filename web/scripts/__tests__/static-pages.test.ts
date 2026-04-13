@@ -95,6 +95,9 @@ describe('generateStaticPages', () => {
     // breadcrumb links to /proposals/ hub, not the SPA hash
     expect(html).toContain('href="/colony/proposals/"');
     expect(html).toContain('>Proposals<');
+    expect(html).toContain(
+      'rel="manifest" href="/colony/manifest.webmanifest"'
+    );
   });
 
   it('generates agent pages', () => {
@@ -127,6 +130,9 @@ describe('generateStaticPages', () => {
     expect(html).toContain('50'); // commits
     expect(html).toContain('20'); // PRs merged
     expect(html).toContain('30'); // reviews
+    expect(html).toContain(
+      'rel="manifest" href="/colony/manifest.webmanifest"'
+    );
   });
 
   it('generates agents index page', () => {
@@ -192,6 +198,9 @@ describe('generateStaticPages', () => {
 
     const html = readFileSync(join(TEST_OUT, 'agents', 'index.html'), 'utf-8');
     expect(html).toContain('No agents yet.');
+    expect(html).toContain(
+      'rel="manifest" href="/colony/manifest.webmanifest"'
+    );
   });
 
   it('agent breadcrumb links to /agents/', () => {

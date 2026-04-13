@@ -210,6 +210,7 @@ function htmlShell(meta: PageMeta, content: string): string {
   <link rel="canonical" href="${escapeHtml(fullUrl)}" />
   <link rel="icon" href="${basePath()}favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" sizes="180x180" href="${basePath()}apple-touch-icon.png" />${meta.extraHeadTags ? `\n  ${meta.extraHeadTags}` : ''}
+  <link rel="manifest" href="${basePath()}manifest.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${escapeHtml(fullUrl)}" />
   <meta property="og:title" content="${escapeHtml(meta.title)}" />

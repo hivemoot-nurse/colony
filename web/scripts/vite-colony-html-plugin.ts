@@ -84,8 +84,10 @@ export function transformHtml(html: string, config: ColonyConfig): string {
  *
  * Uses enforce:'pre' + order:'pre' so placeholder replacement runs before
  * Vite's own HTML transforms. Absolute URLs (canonical, OG, Twitter) are
- * left alone by Vite. The manifest href is emitted as a relative path
+ * left alone by Vite. The homepage manifest href is emitted as a relative path
  * ('manifest.webmanifest') so Vite's base-prefixing applies exactly once.
+ * Static pages are generated outside Vite's HTML transform and therefore emit
+ * their own base-prefixed manifest path directly.
  */
 export function colonyHtmlPlugin(): Plugin {
   const config = resolveColonyConfig();
